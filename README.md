@@ -156,27 +156,27 @@ make performance_test  # 测试所有优化等级
 
 ### 6.1 所有算法性能散点图
 
-![all_algorithms_scatter.png](file:///D:/share/all_algorithms_scatter.png)
+![all_algorithms_scatter.png](./all_algorithms_scatter.png)
 
 ### 6.2 快速排序策略对比图
 
-![quick_sort_pivot_scatter.png](file:///D:/share/quick_sort_pivot_scatter.png)
+![quick_sort_pivot_scatter.png](./quick_sort_pivot_scatter.png)
 
 ### 6.3 算法性能对比图
 
-![pivot_strategy_comparison_iterative.png](file:///D:/share/pivot_strategy_comparison_iterative.png)![pivot_strategy_comparison_recursive.png](file:///D:/share/pivot_strategy_comparison_recursive.png)
+![pivot_strategy_comparison_iterative.png](./pivot_strategy_comparison_iterative.png)![pivot_strategy_comparison_recursive.png](./pivot_strategy_comparison_recursive.png)
 
 ### 6.4 策略排名柱状图
 
-![pivot_strategy_ranking.png](file:///D:/share/pivot_strategy_ranking.png)
+![pivot_strategy_ranking.png](./pivot_strategy_ranking.png)
 
 ### 6.5 递归vs非递归快速排序对比
 
-![recursive_vs_iterative_scatter.png](file:///D:/share/recursive_vs_iterative_scatter.png)
+![recursive_vs_iterative_scatter.png](./recursive_vs_iterative_scatter.png)
 
 ### 6.6 性能密度散点图
 
-![performance_density_scatter.png](file:///D:/share/performance_density_scatter.png)
+![performance_density_scatter.png](./performance_density_scatter.png)
 
 ## 7. 实验问题与解决方案
 
