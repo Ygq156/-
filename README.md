@@ -37,11 +37,11 @@ pip install matplotlib pandas numpy
 
 #### 2.1.2 Pivot策略
 
-| 策略                     | 实现方式   | 适用场景     |
-| ------------------------ | ---------- | ------------ |
-| PIVOT\_FIRST             | 取首元素   | 小规模数据   |
-| PIVOT\_LAST              | 取末尾元素 | 简单实现     |
-| PIVOT\_MIDDLE            | 取中间元素 | 均衡选择     |
+| 策略                       | 实现方式  | 适用场景   |
+| ------------------------ | ----- | ------ |
+| PIVOT\_FIRST             | 取首元素  | 小规模数据  |
+| PIVOT\_LAST              | 取末尾元素 | 简单实现   |
+| PIVOT\_MIDDLE            | 取中间元素 | 均衡选择   |
 | PIVOT\_RANDOM            | 伪随机选择 | 避免最坏情况 |
 | PIVOT\_MEDIAN\_OF\_THREE | 三数取中法 | 推荐生产环境 |
 
@@ -92,13 +92,13 @@ random_seed = (random_seed * 1103515245 + 12345) & 0x7fffffff;
 
 ### 3.2 测试数据规模
 
-| 测试规模 | 说明     |
-| -------- | -------- |
-| 1000     | 基准测试 |
-| 5000     | 中等规模 |
-| 10000    | 常规模拟 |
-| 50000    | 边界测试 |
-| 100000   | 极端测试 |
+| 测试规模   | 说明   |
+| ------ | ---- |
+| 1000   | 基准测试 |
+| 5000   | 中等规模 |
+| 10000  | 常规模拟 |
+| 50000  | 边界测试 |
+| 100000 | 极端测试 |
 
 ## 4. 实验数据收集流程
 
@@ -118,17 +118,16 @@ fprintf(log_file, "Algorithm,PivotStrategy,Size,Time(ms),Sorted\n");
 ```
 
 2. **测试流程**：
-
 * 对每个数据规模执行：
   
   * 5种pivot策略的快速排序（递归+迭代）
   * 并行归并排序
+
 * 生成3种类型的测试结果：
   
   * 排序时间（毫秒）
   * 排序成功率
   * 算法执行效率对比
-
 3. **数据验证**：
 
 ```
@@ -138,12 +137,12 @@ int sorted = is_sorted(test_arr, size);
 
 ## 5. 编译优化等级对比
 
-| 优化等级 | 特点     | 性能影响       |
-| -------- | -------- | -------------- |
-| -O0      | 调试模式 | 性能最低       |
-| -O1      | 基础优化 | 平衡调试与性能 |
-| -O2      | 中级优化 | 推荐使用       |
-| -O3      | 高级优化 | 性能最佳       |
+| 优化等级 | 特点   | 性能影响    |
+| ---- | ---- | ------- |
+| -O0  | 调试模式 | 性能最低    |
+| -O1  | 基础优化 | 平衡调试与性能 |
+| -O2  | 中级优化 | 推荐使用    |
+| -O3  | 高级优化 | 性能最佳    |
 
 ### 5.1 优化等级实验
 
@@ -157,45 +156,41 @@ make performance_test  # 测试所有优化等级
 
 ### 6.1 所有算法性能散点图
 
-![all_algorithms_scatter.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2F09c68de3-ef5a-4249-bc8e-e862ef6e04e2.png)
+![all_algorithms_scatter.png](file:///D:/share/all_algorithms_scatter.png)
 
 ### 6.2 快速排序策略对比图
 
-![quick_sort_pivot_scatter.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2F5f49488d-9e21-4fdb-b7a8-b16fbf3535f2.png)
+![quick_sort_pivot_scatter.png](file:///D:/share/quick_sort_pivot_scatter.png)
 
 ### 6.3 算法性能对比图
 
-![pivot_strategy_comparison_iterative.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2Ff72bcbb8-1cae-4a61-8cec-3ddb987e7990.png)
-
-![pivot_strategy_comparison_recursive.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2F75d3d0a8-8665-4f4c-a792-c13db89b7ed5.png)
-
-![](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Ffile%3A%2F%2F%2FC%3A%2FUsers%2Fyr123%2FAppData%2FRoaming%2Fcom.codexu.NoteGen%2Fscreenshot%2Falgorithm_comparison_best_pivot.png)
+![pivot_strategy_comparison_iterative.png](file:///D:/share/pivot_strategy_comparison_iterative.png)![pivot_strategy_comparison_recursive.png](file:///D:/share/pivot_strategy_comparison_recursive.png)
 
 ### 6.4 策略排名柱状图
 
-![pivot_strategy_ranking.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2F0682d379-d4c9-4d50-935c-de2608e8dfdd.png)
+![pivot_strategy_ranking.png](file:///D:/share/pivot_strategy_ranking.png)
 
 ### 6.5 递归vs非递归快速排序对比
 
-![recursive_vs_iterative_scatter.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2Ffb101d52-8ee8-4481-947e-e89baf3d8de6.png)
+![recursive_vs_iterative_scatter.png](file:///D:/share/recursive_vs_iterative_scatter.png)
 
 ### 6.6 性能密度散点图
 
-![performance_density_scatter.png](http://asset.localhost/C%3A%5CUsers%5Cyr123%5CAppData%5CRoaming%5Ccom.codexu.NoteGen%2Farticle%2F%2Fassets%2Fa6e62e6c-6f88-48a1-9ad3-b48703bf4a4a.png)
+![performance_density_scatter.png](file:///D:/share/performance_density_scatter.png)
 
 ## 7. 实验问题与解决方案
 
 ### 7.1 典型问题
 
-| 问题类型                     | 解决方案                                                    |
-| ---------------------------- | ----------------------------------------------------------- |
-| OpenMP缺失                   | 安装libomp-dev并添加 `-fopenmp`编译选项                   |
-| 内存不足                     | 增加虚拟内存或使用 `valgrind`内存检查                     |
-| 文件读写失败                 | 用root权限运行，`sudo su`                                 |
-| 算法错误                     | 使用 `run_small_test`模块验证基础功能                     |
-| 虚拟机中文件无法移至主机中   | 创建共享文件夹和快捷方式，`ln -s /mnt/hgfs/share ~/share` |
-| 数据储存失败，路径出错       | 检查文件命名是否正确                                        |
-| python生成的图表总有白框生成 | 没有解决                                                    |
+| 问题类型              | 解决方案                                         |
+| ----------------- | -------------------------------------------- |
+| OpenMP缺失          | 安装libomp-dev并添加 `-fopenmp`编译选项               |
+| 内存不足              | 增加虚拟内存或使用 `valgrind`内存检查                     |
+| 文件读写失败            | 用root权限运行，`sudo su`                          |
+| 算法错误              | 使用 `run_small_test`模块验证基础功能                  |
+| 虚拟机中文件无法移至主机中     | 创建共享文件夹和快捷方式，`ln -s /mnt/hgfs/share ~/share` |
+| 数据储存失败，路径出错       | 检查文件命名是否正确                                   |
+| python生成的图表总有白框生成 | 没有解决                                         |
 
 ### 7.2 问题处理示例
 
