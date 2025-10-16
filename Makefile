@@ -3,13 +3,13 @@
 # ============================================================================
 
 # 编译器设置
-CC = gcc
-CFLAGS = -Wall -Wextra -g -I./src
-TARGET = sort_analysis
-SOURCES = src/main.c src/test_data.c src/sort_algorithms.c
+CC = gcc                                                       // 指定使用 GCC 编译器
+CFLAGS = -Wall -Wextra -g -I./src                              //CFLAGS指代包含，-Wall指启用所有警告，-Wextra指启用额外警告，-g指生成调试信息，-I./src指添加头文件搜索路径
+TARGET = sort_analysis                                         //TARGET= + 运动程序
+SOURCES = src/main.c src/test_data.c src/sort_algorithms.c     //SOURCES= + 要执行的程序
 
 # OpenMP支持（如果可用）
-ifeq ($(shell which gcc >/dev/null 2>&1 && gcc -fopenmp -E - < /dev/null > /dev/null 2>&1 && echo 1),1)
+ifeq ($(shell which gcc >/dev/null 2>&1 && gcc -fopenmp -E - < /dev/null > /dev/null 2>&1 && echo 1),1)   //
     CFLAGS += -fopenmp
     OPENMP_SUPPORT = yes
 else
