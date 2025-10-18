@@ -21,8 +21,9 @@ pip install matplotlib pandas numpy
 ### 1.3 项目依赖
 
 * GCC编译器（版本11.3.0+）
-* Python （版本3.12）
+* Python （版本3.12），matplotlib ，pandas ，numpy
 * OpenMP库（编译时自动检测）
+* Make构建工具
 * 文件系统：需要 `data/`和 `results/`目录用于数据存储
 
 ## 2. 排序算法实现细节
