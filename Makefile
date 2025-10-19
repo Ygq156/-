@@ -5,7 +5,7 @@
 # 编译器设置
 CC = gcc                                                       // 指定使用 GCC 编译器
 CFLAGS = -Wall -Wextra -g -I./src                              //CFLAGS指代包含，-Wall指启用所有警告，-Wextra指启用额外警告，-g指生成调试信息，-I./src指添加头文件搜索路径
-TARGET = sort_analysis                                         //TARGET= + 运动程序
+TARGET = sort_analysis                                         //TARGET= + 运行程序
 SOURCES = src/main.c src/test_data.c src/sort_algorithms.c     //SOURCES= + 要执行的程序
 
 # OpenMP支持（如果可用）
