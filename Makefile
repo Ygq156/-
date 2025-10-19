@@ -3,10 +3,10 @@
 # ============================================================================
 
 # 编译器设置
-CC = gcc                                                       // 指定使用 GCC 编译器
-CFLAGS = -Wall -Wextra -g -I./src                              //CFLAGS指代包含，-Wall指启用所有警告，-Wextra指启用额外警告，-g指生成调试信息，-I./src指添加头文件搜索路径
-TARGET = sort_analysis                                         //TARGET= + 运行程序
-SOURCES = src/main.c src/test_data.c src/sort_algorithms.c     //SOURCES= + 要执行的程序
+CC = gcc                                                      
+CFLAGS = -Wall -Wextra -g -I./src                              
+TARGET = sort_analysis                                         
+SOURCES = src/main.c src/test_data.c src/sort_algorithms.c     
 
 # OpenMP支持（如果可用）
 ifeq ($(shell which gcc >/dev/null 2>&1 && gcc -fopenmp -E - < /dev/null > /dev/null 2>&1 && echo 1),1)   
@@ -23,7 +23,7 @@ OPTIMIZATIONS = -O0 -O1 -O2 -O3
 SMALL_SCALE_FLAG = -DSMALL_SCALE
 
 # 默认目标
-.PHONY: all clean test small_test optimizations performance_test analyze      //.PHONY 是 Makefile 中的伪目标声明，用于告诉 Make 这些目标不代表实际的文件，伪指令间用空号隔开
+.PHONY: all clean test small_test optimizations performance_test analyze      
 
 # 默认编译（使用O2优化）
 all: $(TARGET)
